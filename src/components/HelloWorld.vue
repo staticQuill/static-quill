@@ -7,8 +7,8 @@ defineProps<{
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h2 class="green">{{ submsg }}</h2>
+    <h1>{{ msg }}</h1>
+    <h2>{{ submsg }}</h2>
   </div>
 </template>
 
@@ -16,8 +16,10 @@ defineProps<{
 h1 {
   font-weight: 500;
   font-size: 2.6rem;
-  position: relative;
-  top: -10px;
+  text-decoration: none;
+  color: rgb(0, 121, 204);
+  transition: 0.4s;
+  text-align: center;
 }
 
 h3 {
@@ -25,12 +27,14 @@ h3 {
 }
 
 .greetings h1,
+.greetings h2,
 .greetings h3 {
   text-align: center;
 }
 
 @media (min-width: 1024px) {
   .greetings h1,
+  .greetings h2,
   .greetings h3 {
     text-align: left;
   }
