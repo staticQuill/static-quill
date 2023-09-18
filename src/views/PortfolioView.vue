@@ -1,8 +1,8 @@
 <template>
-  <div class="about">
+  <div class="about panel-right">
     <h1>Public Projects: </h1>
     <ul>
-      <li class="mainlist">
+      <li class="main-list">
         <a href="https://www.convergent.beauty">Convergent Beauty:</a> An accessible database of beauty products and their sensory qualities.
         <br>
         <a href="https://www.youtube.com/watch?v=I9y5m0yYvS4">Watch a silent demo of the project</a>
@@ -36,13 +36,7 @@
 @media (min-width: 1024px) {
   .about {
     min-height: 100vh;
-    display: flex;
-    align-items: center;
   }
-}
-
-.mainlist {
-  margin-top: 2em;
 }
 </style>
 <script setup lang="ts">

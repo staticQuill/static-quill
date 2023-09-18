@@ -4,28 +4,50 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <img alt="Static Quill logo" class="logo" src="@/assets/logo.svg" width="250" height="250" />
-
-
-      <HelloWorld msg="Static Quill Limited" submsg="Clever Web Development & Friendly Software Solutions"/>
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/portfolio">Portfolio</RouterLink>
-        <RouterLink to="/contact">Contact</RouterLink>
-      </nav>
-    </div>
-  </header>
-
+  <div class="panel-left">
+    <header>
+      <div class="branding">
+        <img alt="Static Quill logo" class="logo" src="@/assets/logo.svg" width="250" height="250" />
+        <HelloWorld msg="Static Quill Limited" submsg="Clever Web Development & Friendly Software Solutions"/>
+      </div>
+    </header>
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/portfolio">Portfolio</RouterLink>
+      <RouterLink to="/contact">Contact</RouterLink>
+    </nav>
+  </div>
   <RouterView />
 </template>
 
 <style scoped>
+
 header {
   line-height: 1.5;
   max-height: 100vh;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.panel-left {
+  display: grid;
+  padding-top: 0;
+  align-content: center;
+  grid-template-columns: 80% 20%;
+  height: 100vh;
+
+  border-style: solid;
+  border-width: 0;
+  border-color: var(--vt-c-electric);
+  border-right-width: medium;
+  padding-bottom: 10em;
+  border-image: url("@/assets/static-quill-border-image-darkmode.png") 1 6 5 0 repeat repeat;
+}
+
+@media (prefers-color-scheme: light) {
+  .panel-left {
+    border-image: url("@/assets/static-quill-border-image.png") 1 6 5 0 repeat repeat;
+  }
 }
 
 .logo {
@@ -33,17 +55,11 @@ header {
   margin: 0 auto 2rem;
 }
 
-@media (min-width: 1024px) {
-  .logo {
-    margin: 0 20% 0 20%;
-  }
-}
-
 nav {
-  width: 100%;
   font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  line-height: 100%;
 }
 
 nav a.router-link-exact-active {
@@ -54,40 +70,35 @@ nav a.router-link-exact-active:hover {
   background-color: transparent;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
 @media (min-width: 1024px) {
+  .logo {
+    margin: 0 20% 0 20%;
+    place-items: center;
+  }
+
   header {
     display: flex;
     place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
   }
 
-  .logo {
-    place-items: center;
-  }
-
-  header .wrapper {
+  .branding {
     display: flex;
     place-items: center;
     flex-wrap: wrap;
   }
 
   nav {
-    text-align: center;
-    margin-left: -1rem;
     font-size: 1rem;
+    text-align: right;
+    padding-right: 2rem;
+    margin-top: 10em;
+  }
 
-    padding: 1rem 0;
+  nav a {
+    margin-bottom: 1rem;
     margin-top: 1rem;
+    display: block;
+    width: 100%;
   }
 }
 </style>

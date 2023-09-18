@@ -17,13 +17,13 @@ h1 {
   font-weight: 500;
   font-size: 2.6rem;
   text-decoration: none;
-  color: rgb(0, 121, 204);
+  color: var(--vt-c-electric);
   transition: 0.4s;
   text-align: center;
 }
 
-h3 {
-  font-size: 1.2rem;
+h2 {
+  font-size: 1.1rem;
 }
 
 .greetings h1,
