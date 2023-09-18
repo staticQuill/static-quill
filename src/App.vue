@@ -30,11 +30,14 @@ header {
 }
 
 .panel-left {
+  position: fixed;
+  padding-top: 10vh;
+
   display: grid;
-  padding-top: 0;
   align-content: center;
   grid-template-columns: 80% 20%;
   height: 100vh;
+  width: 30vw;
 
   border-style: solid;
   border-width: 0;

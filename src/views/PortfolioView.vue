@@ -1,5 +1,5 @@
 <template>
-  <div class="about panel-right">
+  <div class="panel-right">
     <h1>Public Projects: </h1>
     <ul>
       <li class="main-list">

@@ -1,7 +1,7 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   --vt-c-white: #ffffff;
-  --vt-c-parchment: #c2b9af;
+  --vt-c-parchment: #f1e8da;
   --vt-c-white-soft: #f8f8f8;
   --vt-c-white-mute: #f2f2f2;
 
@@ -10,8 +10,9 @@
   --vt-c-black-soft: #222222;
   --vt-c-black-mute: #282828;
 
-  --vt-c-indigo: #2c3e50;
+  --vt-c-indigo: #09061f;
   --vt-c-electric: rgb(0, 180, 204);
+  --vt-c-dark-electric: rgb(28, 12, 108);
 
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
   --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
@@ -19,7 +20,7 @@
   --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
 
   --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-light-2: rgba(13, 4, 45, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgb(255, 244, 176);
 }
@@ -57,6 +58,12 @@
   }
 }
 
+@media (prefers-color-scheme: light) {
+  .logo {
+    filter: invert(7%) sepia(88%) saturate(4200%) hue-rotate(252deg) brightness(88%) contrast(107%);
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -81,7 +88,10 @@ body {
 }
 
 .panel-right {
-  padding-top: 10em;
-  min-height: 100vh;
+  position: absolute;
+  width: 50%;
+  right: 0;
   padding-left: 2em;
+  top: 50%;
+  transform: translateY(-50%);
 }

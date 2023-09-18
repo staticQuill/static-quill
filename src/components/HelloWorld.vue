@@ -22,6 +22,12 @@ h1 {
   text-align: center;
 }
 
+@media (prefers-color-scheme: light) {
+  h1 {
+    color: var(--vt-c-dark-electric);
+  }
+}
+
 h2 {
   font-size: 1.1rem;
 }
