@@ -17,16 +17,6 @@ a {
   text-decoration-color: var(--vt-c-electric);
 }
 
-nav a {
-  border-radius: 50% 10% 0 0;
-}
-
-@media (hover: hover) {
-  nav a:hover {
-    border-radius: 100% 20% 0 0;
-  }
-}
-
 @media (prefers-color-scheme: dark) {
   @media (hover: hover) {
     nav a:hover {

@@ -38,11 +38,14 @@ h2 {
   text-align: center;
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   .greetings h1,
   .greetings h2,
   .greetings h3 {
-    text-align: left;
+    text-align: center;
+  }
+  .greetings h1 {
+    font-size: 2rem;
   }
 }
 </style>

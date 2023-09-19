@@ -1,5 +1,5 @@
 <template>
-  <div class="panel-right">
+  <div class="portfolio">
     <h1>Public Projects: </h1>
     <ul>
       <li class="main-list">
@@ -33,11 +33,6 @@
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-  }
-}
 </style>
 <script setup lang="ts">
 </script>

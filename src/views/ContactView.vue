@@ -1,5 +1,4 @@
 <template>
-  <div class="panel-right">
   <div class="contact">
     <h1>Have a project that needs a developer?</h1>
     <p>Hi! I'm Jaimie Black (they/them please!) and I'd love to hear about your projects.
@@ -12,7 +11,6 @@
     </ul>
     <p>Then please get in touch! I'm also interested in projects centered around creative writing and reading.</p>
     <p>Contact me by email at <a href="mailto:jaimielblack@outlook.com">JaimieLBlack@outlook.com</a></p>
-  </div>
   </div>
 </template>
 

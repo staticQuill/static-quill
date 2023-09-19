@@ -1,12 +1,21 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import {RouterLink, RouterView, useRoute} from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import { computed } from "vue";
+import router from "@/router";
+
+
+const isHome = computed(() => {
+  const route = useRoute();
+  console.log(route)
+  return route.path == "/";
+})
 </script>
 
 <template>
   <div class="panel-left">
     <header>
-      <div class="branding">
+      <div v-bind:class="(isHome)?'router-inactive':'router-active'" class="branding">
         <img alt="Static Quill logo" class="logo" src="@/assets/logo.svg" width="250" height="250" />
         <HelloWorld msg="Static Quill Limited" submsg="Clever Web Development & Friendly Software Solutions"/>
       </div>
@@ -17,7 +26,10 @@ import HelloWorld from './components/HelloWorld.vue'
       <RouterLink to="/contact">Contact</RouterLink>
     </nav>
   </div>
-  <RouterView />
+
+  <div class="panel-right">
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
@@ -59,10 +71,22 @@ header {
 }
 
 nav {
-  font-size: 12px;
+  font-size: 18px;
   grid-column-start: 2;
   grid-column-end: 3;
-  line-height: 100%;
+  display: block;
+  height: 50vh;
+}
+
+nav a {
+  display: block;
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  text-align: center;
+  border-radius: 10% 10% 10% 10%;
 }
 
 nav a.router-link-exact-active {
@@ -73,10 +97,27 @@ nav a.router-link-exact-active:hover {
   background-color: transparent;
 }
 
-@media (min-width: 1024px) {
+.panel-right {
+  position: absolute;
+  width: 100%;
+  padding-right: 1em;
+  padding-left: 1em;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (hover: hover) {
+  nav a:hover {
+    border-radius: 50% 50% 50% 50%;
+  }
+}
+
+
+@media (max-width: 1024px) {
   .logo {
-    margin: 0 20% 0 20%;
-    place-items: center;
+    align-items: center;
+    margin: 0;
   }
 
   header {
@@ -85,23 +126,52 @@ nav a.router-link-exact-active:hover {
   }
 
   .branding {
-    display: flex;
-    place-items: center;
-    flex-wrap: wrap;
+    display: block;
+    width: 80vw;
+    text-align: center;
   }
 
   nav {
+    position: absolute;
     font-size: 1rem;
-    text-align: right;
-    padding-right: 2rem;
-    margin-top: 10em;
+    text-align: center;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2em;
   }
 
   nav a {
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    display: flex;
+    width: auto;
+    padding-top: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 50% 50% 20% 20%;
+  }
+
+  .panel-left {
+    position: relative;
     display: block;
+    align-content: center;
+    width: 80vw;
+    padding-top: 0;
+    border: none;
+  }
+
+  .panel-right {
+    position: absolute;
     width: 100%;
+    padding-right: 1em;
+    padding-left: 1em;
+    left: 50%;
+    top: 10em;
+    transform: translateX(-50%);
+  }
+
+  .router-active {
+    display: none;
+    height: 0;
   }
 }
 </style>
