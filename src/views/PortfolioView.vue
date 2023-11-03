@@ -15,7 +15,7 @@
           <li>Elasticsearch for speedy data access</li>
         </ul>
       </li>
-      <li class="mainlist">
+      <li class="main-list">
         Pomodora: A pomodoro timer for Atlassian's Jira.
         <br>
         <a href="https://www.youtube.com/watch?v=VjjLNfFdJCE">View the video demo here</a>

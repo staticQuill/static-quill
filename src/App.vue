@@ -16,7 +16,7 @@ const isHome = computed(() => {
   <div class="panel-left">
     <header>
       <div v-bind:class="(isHome)?'router-inactive':'router-active'" class="branding">
-        <img alt="Static Quill logo" class="logo" src="@/assets/logo.svg" width="250" height="250" />
+        <img alt="Static Quill logo" class="logo" src="@/assets/logo.svg" />
         <HelloWorld msg="Static Quill Limited" submsg="Clever Web Development & Friendly Software Solutions"/>
       </div>
     </header>
@@ -68,6 +68,7 @@ header {
 .logo {
   place-items: center;
   margin: 0 auto 2rem;
+  width: 20vw;
 }
 
 nav {
@@ -98,13 +99,11 @@ nav a.router-link-exact-active:hover {
 }
 
 .panel-right {
-  position: absolute;
-  width: 100%;
   padding-right: 1em;
   padding-left: 1em;
-  left: 50%;
   top: 50%;
   transform: translateY(-50%);
+  font-size: 1.5em;
 }
 
 @media (hover: hover) {
@@ -118,6 +117,7 @@ nav a.router-link-exact-active:hover {
   .logo {
     align-items: center;
     margin: 0;
+    width: 500px;
   }
 
   header {
